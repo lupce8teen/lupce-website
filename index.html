@@ -221,6 +221,21 @@
   .shelf i:nth-child(2n){background:var(--marigold)}
   .shelf i:nth-child(3n){background:#fff}
 
+  /* ---------- who is educated ---------- */
+  #educated{background:var(--mint);position:relative;overflow:hidden}
+  .edu-head{max-width:62ch;margin-bottom:40px;position:relative}
+  .edu-head h2{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+  .edu-head p{color:var(--muted);font-size:1.08rem;margin-top:12px}
+  .edu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:16px 22px;position:relative}
+  .edu li{background:#fff;border-radius:18px;padding:20px 24px 20px 28px;border-left:5px solid var(--paddy);box-shadow:0 14px 30px -26px rgba(13,79,92,.6)}
+  .edu li:nth-child(3n+2){border-left-color:var(--marigold)}
+  .edu li:nth-child(3n){border-left-color:var(--river-2)}
+  .edu li:last-child{grid-column:1/-1;background:var(--river);border-left-color:var(--marigold)}
+  .edu li:last-child small{color:var(--marigold)}
+  .edu li:last-child p{color:#fff}
+  .edu small{display:block;font-family:var(--head);font-weight:800;font-size:1.12rem;color:var(--river);margin-bottom:4px}
+  .edu p{margin:0;font-size:1.08rem;font-weight:500;color:var(--ink);line-height:1.65}
+
   /* ---------- to parents ---------- */
   #parents{background:var(--kash)}
   .letter{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
@@ -305,6 +320,7 @@
     .admit .btn{margin-left:0}
     .steps5{grid-template-columns:1fr 1fr}
     .special{grid-template-columns:1fr}
+    .edu{grid-template-columns:1fr}
     .sp{padding:28px}
     .big100{font-size:5rem}
     .steps5 li:last-child{grid-column:span 2}
@@ -324,10 +340,63 @@
     .chain li + li::before{width:2px;height:14px;margin:2px 0}
     .closing{font-size:1.15rem;padding:24px}
   }
+  /* bigger small text on phones, for readers of every age */
+  @media (max-width:860px){
+    body{font-size:17.5px}
+    nav.menu a{font-size:1.08rem}
+    .hero .lead{font-size:1.12rem}
+    .fact > span,.sec-head p,.pillar p,.card p,.wk p,.book p,.panel li,.ct .lbl,.edu p,.advice p,.sp p{font-size:1.02rem}
+    .book .who,.card .tag,.book .status,.panel .note,.sp.family .note,.eight small,.steps5 small,footer{font-size:.98rem}
+    .chain li span{font-size:1rem}
+    .chain li span small{font-size:.9rem}
+    .age small{font-size:.72rem}
+    .edu small{font-size:1.1rem}
+    .kicker{font-size:1rem}
+  }
+  @media (max-width:560px){
+    body{font-size:17.5px}
+    .letters{grid-template-columns:1fr;gap:8px}
+    .letters li{grid-template-columns:60px 1fr;gap:14px;padding:6px 14px 6px 6px;text-align:left}
+    .letters b{height:54px;font-size:2.2rem}
+    .letters span{font-size:1.3rem}
+    .letters small{font-size:.98rem}
+    .steps5 span{font-size:1.05rem}
+  }
   @media (prefers-reduced-motion:reduce){
     .letters li{animation:none}
     html{scroll-behavior:auto}
   }
+
+  /* ===== larger small text (all screens) ===== */
+  body{font-size:19px}
+  nav.menu a{font-size:1.02rem}
+  .hero .lead{font-size:1.28rem}
+  .sec-head p,.why p,.edu-head p{font-size:1.25rem!important}
+  .fact > span{font-size:1.18rem}
+  .letters small{font-size:1.12rem}
+  .steps5 small{font-size:1.12rem}
+  .chain li span small{font-size:1rem}
+  .eight small{font-size:1.12rem}
+  .age small{font-size:.92rem}
+  .card p,.wk p,.book p,.pillar p,.part p,.panel li,.panel p,.edu p,.advice p,.sp p,.admit p{font-size:1.2rem}
+  .book .who,.card .tag,.book .status,.panel .note,.sp.family .note,.ct .lbl,footer,.kicker{font-size:1.1rem}
+  .edu small{font-size:1.25rem}
+  .part-mark small{font-size:1.2rem}
+  @media (max-width:860px){
+    .part-mark small{font-size:1.2rem}
+    .eight small,.steps5 small,.letters small{font-size:1.2rem}
+    body{font-size:20px}
+    nav.menu a{font-size:1.15rem}
+    .hero .lead{font-size:1.28rem}
+    .sec-head p,.why p,.edu-head p{font-size:1.25rem!important}
+    .fact > span,.card p,.wk p,.book p,.pillar p,.part p,.panel li,.panel p,.edu p,.advice p,.sp p,.ct .lbl,.admit p{font-size:1.25rem}
+    .book .who,.card .tag,.book .status,.panel .note,.sp.family .note,.eight small,.steps5 small,footer,.kicker{font-size:1.15rem}
+    .letters small{font-size:1.12rem}
+    .chain li span small{font-size:1.08rem}
+    .age small{font-size:.86rem}
+    .edu small{font-size:1.25rem}
+  }
+  @media (max-width:860px){.eight small,.steps5 small,.letters small,.part-mark small{font-size:1.2rem}}
 </style>
 </head>
 <body>
@@ -352,7 +421,7 @@
       <a href="#journey"><span lang="bn">শেখার যাত্রা</span><span lang="en">Journey</span></a>
       <a href="#books"><span lang="bn">বই</span><span lang="en">Books</span></a>
       <a href="#how"><span lang="bn">কীভাবে চলে</span><span lang="en">How it works</span></a>
-      <a href="#parents"><span lang="bn">অভিভাবকের প্রতি</span><span lang="en">For parents</span></a>
+      <a href="#educated"><span lang="bn">অভিভাবকের প্রতি</span><span lang="en">For parents</span></a>
       <a href="#contact"><span lang="bn">যোগাযোগ</span><span lang="en">Contact</span></a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Language">
@@ -599,7 +668,7 @@
         <article class="book" style="--c:#4F4486">
           <h3><span lang="bn">নিজের ভাষায় কুরআন শিখি</span><span lang="en">Learn the Quran in My Own Language</span></h3>
           <div class="who"><span lang="bn">বয়স ৮–১০</span><span lang="en">Age 8–10</span></div>
-          <p><span lang="bn">পুরো কুরআনের বাংলা অনুবাদ পড়া ও শেখা, যাতে শিশু কুরআন থেকে নিজের সিদ্ধান্ত নিজেই নিতে পারে এবং দুনিয়া ও আখেরাতে সফল হতে পারে।</span><span lang="en">Reading and learning the whole Quran in Bangla translation, so the child can make their own decisions from the Quran and succeed in this world and the Hereafter.</span></p>
+          <p><span lang="bn">পুরো কুরআনের বাংলা অনুবাদ পড়া ও শেখা, যাতে শিশু নিজের চিন্তা ও অন্যের মতামত কুরআন দিয়ে যাচাই করে নিজের সিদ্ধান্ত নিজেই কুরআন থেকে নিতে পারে, এবং সৎ, যোগ্য, ন্যায়পরায়ণ ও নেতৃত্বদানকারী হয়ে দুনিয়া ও আখিরাতে সফল মানুষ হতে পারে।</span><span lang="en">Reading and learning the whole Quran in Bangla translation, so the child can test their own thoughts and other people's opinions against the Quran, make their own decisions from it, and grow into an honest, capable, just leader who succeeds in this world and the Hereafter.</span></p>
         </article>
       </div>
     </div>
@@ -655,6 +724,30 @@
         <p><span lang="bn">১০ থেকে ১৮ বছর, জীবন গড়ে ওঠার সবচেয়ে মূল্যবান এই ৮টি বছরে ইংরেজি ও স্কিলের পাশাপাশি প্রতি মাসে শিশুর হাতে তুলে দেওয়া হবে একটি করে বিশ্বসেরা (World Bestseller) আত্মোন্নয়নমূলক বই। বইগুলো ইংরেজিতে পড়িয়ে পৃথিবীর দূরদর্শী মানুষদের বাস্তব অভিজ্ঞতাগুলো ব্যবহারিকভাবে শেখানো হবে। ১০০টি বইয়ের তালিকা থেকে ৮ বছরে মোট ৯৬টি বই।</span><span lang="en">From 10 to 18, the eight most precious years for shaping a life, every month alongside English and skills, each child is handed one world-bestselling self-improvement book. Read in English, these books teach, in a practical way, the real-life experiences of the world's most far-sighted people: 96 books over eight years, chosen from a list of 100.</span></p>
         <p class="sp-close"><span lang="bn">প্রতিটি বই যেন একজন মহান মানুষের সাথে এক মাসের পথচলা। যাতে শিশু ছোটবেলা থেকেই বিশ্বের বিখ্যাত মানুষদের মতো নিজেকে গড়ে তুলতে পারে, এবং উদ্যোক্তা হয়ে পৃথিবীকে যেন নতুন পথ দেখাতে পারে।</span><span lang="en">Each book is like a month-long walk beside a great person, so that from childhood a learner can shape themselves like the world's great people and, as an entrepreneur, show the world a new way.</span></p>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== WHO IS EDUCATED ========== -->
+  <section id="educated">
+    <div class="wrap">
+      <div class="edu-head">
+        <span class="kicker"><span lang="bn">আমাদের দর্শন</span><span lang="en">Our belief</span></span>
+        <h2><span lang="bn">শিক্ষিত তাকেই বলে</span><span lang="en">Who is truly educated</span></h2>
+        <p><span lang="bn">সার্টিফিকেট নয়, এই গুণগুলোই একজন মানুষকে সত্যিকারের শিক্ষিত করে। আপনার সন্তানের জন্য কোন পথ বেছে নেবেন, ভেবে দেখুন।</span><span lang="en">Not certificates, but these qualities make a person truly educated. Think about which path you want for your child.</span></p>
+      </div>
+      <ul class="edu">
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে পৃথিবীর সব ভালো উৎস থেকে নিজেই শেখার আগ্রহ রাখে।</span><span lang="en">Is eager to learn on their own from every good source in the world.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে প্রতিদিন নতুন কিছু শেখে এবং নিজের জ্ঞান ও উপলব্ধিকে সমৃদ্ধ করে।</span><span lang="en">Learns something new every day and keeps enriching their knowledge and understanding.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে বোঝে, শেখার কোনো শেষ নেই; জানার পৃথিবী অসীম।</span><span lang="en">Understands that learning never ends; the world of knowing is endless.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে নিজের জ্ঞানের সীমাবদ্ধতা সম্পর্কে সচেতন থাকে এবং অজানাকে জানতে বিনয়ী থাকে।</span><span lang="en">Is aware of the limits of their own knowledge and stays humble before the unknown.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে নতুন চ্যালেঞ্জ গ্রহণ করতে ভয় পায় না এবং প্রতিকূলতা থেকে শিক্ষা নিতে জানে।</span><span lang="en">Is not afraid of new challenges and knows how to learn from hardship.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যার কথায় সৌন্দর্য, আচরণে শালীনতা এবং মানুষের প্রতি সম্মান থাকে।</span><span lang="en">Speaks beautifully, behaves decently and holds respect for people.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যার সংস্পর্শে এসে মানুষ অপমানিত নয়, বরং সম্মানিত ও মর্যাদাবান বোধ করে।</span><span lang="en">Makes people feel honoured and valued, never humiliated, in their company.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে নিজের, পরিবারের ও আত্মীয়স্বজনের হক আদায় করতে অর্থোপার্জনে ও সুন্দর আচরণে সচেতন থাকে।</span><span lang="en">Is mindful of earning and of good conduct, to fulfil the rights of themselves, their family and their relatives.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে সৃষ্টিকর্তার সঙ্গে নিজের সম্পর্ক অটুট রাখে এবং তাঁর বিধানের প্রতি আন্তরিকভাবে আত্মসমর্পণ করে নিজের জীবন পরিচালনা করে।</span><span lang="en">Keeps an unbroken bond with the Creator and lives by sincerely submitting to His guidance.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে সব ধরনের অন্যায়, অশ্লীলতা ও জুলুম থেকে নিজেকে বিরত রাখে এবং অন্যকেও তা থেকে রক্ষা করার চেষ্টা করে।</span><span lang="en">Keeps away from every kind of wrongdoing, indecency and injustice, and tries to protect others from them too.</span></p></li>
+        <li><small><span lang="bn">শিক্ষিত তাকেই বলে,</span><span lang="en">An educated person</span></small><p><span lang="bn">যে পরকালে সৃষ্টিকর্তার সামনে নিজের জীবনের কর্মের হিসাব দিতে প্রস্তুত থাকে এবং জান্নাত লাভে সচেতন থাকে।</span><span lang="en">Is ready to account for their life's deeds before the Creator in the Hereafter, and strives to earn Paradise.</span></p></li>
+      </ul>
     </div>
   </section>
 
