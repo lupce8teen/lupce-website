@@ -484,6 +484,51 @@
   .wa-link .wa{color:#25D366}
   @media (max-width:560px){.admit .btn{width:100%;justify-content:center;flex-wrap:wrap;gap:4px 8px;text-align:center}}
   .admit .btn span{white-space:nowrap}
+  /* ===== parents' voices & LUPCE messages ===== */
+  #voices [hidden]{display:none!important}
+  #voices{background:var(--mint);padding:80px 0}
+  .voices-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:28px}
+  .voices-grid.single{grid-template-columns:1fr}
+  .vcard{display:flex;flex-direction:column;background:#fff;border-radius:var(--radius-lg);padding:32px 34px;border-top:6px solid var(--marigold);box-shadow:0 18px 40px -30px rgba(13,79,92,.5)}
+  .vcard.dark{background:var(--river);border-top-color:var(--marigold)}
+  .vcard h2{font-size:clamp(1.6rem,2.6vw,2rem);margin-bottom:18px}
+  .vcard.dark h2{color:#fff}
+  .vcard .vbody{flex:1;min-height:150px}
+  .vcard .vtext,.vcard .vwho,.vcard .vdate,.vcard .vtitle{font-family:"Noto Sans Bengali",system-ui,sans-serif!important}
+  .vcard .vtext{font-size:1.3rem!important;line-height:1.85;color:var(--ink);margin:0 0 14px;white-space:pre-line}
+  .vcard .vwho{font-size:1.15rem!important;font-weight:700;color:var(--paddy);margin:0}
+  .vcard .vdate{font-size:1.15rem!important;color:var(--marigold);font-weight:600;margin:0 0 6px}
+  .vcard .vtitle{font-size:1.6rem!important;color:#fff;margin:0 0 10px;font-weight:700}
+  .vcard.dark .vtext{color:#E3F1EF}
+  .vnav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+  .vcard.dark .vnav{border-top-color:rgba(255,255,255,.18)}
+  .vnav button{all:unset;cursor:pointer;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;background:var(--mint);color:var(--river)}
+  .vnav button:hover{background:var(--marigold);color:#2A1E00}
+  .vnav button:focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
+  .vcard.dark .vnav button{background:rgba(255,255,255,.12);color:#fff}
+  .vdots{display:flex;gap:6px}
+  .vdots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+  .vdots i.on{background:var(--marigold)}
+  .vcard.dark .vdots i{background:rgba(255,255,255,.3)}
+  .vcard.dark .vdots i.on{background:var(--marigold)}
+  .vcount{font-size:1.05rem;font-weight:600;color:var(--muted);min-width:3.2em;text-align:center}
+  .vcard.dark .vcount{color:#BFDCD9}
+  .vnav.solo{display:none}
+  .vwrite{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 28px;padding:24px 30px;border-radius:var(--radius-lg);background:#fff;border:1px solid var(--line)}
+  .vwrite p{margin:0;font-size:1.15rem;max-width:46ch;color:var(--ink)}
+  .vwrite .btn{background:var(--river);color:#fff}
+  .vwrite .btn:hover{background:#0A3F4A}
+  @media (max-width:860px){
+    .voices-grid{grid-template-columns:1fr}
+    .vcard{padding:26px 22px}
+    .vcard .vtext{font-size:1.45rem!important}
+    .vcard .vwho{font-size:1.3rem!important}
+    .vcard .vtitle{font-size:1.55rem!important}
+    .vcard .vdate{font-size:1.2rem!important}
+    .vcard.dark .vtext{color:#E3F1EF!important}
+    .vwrite{padding:22px}
+    .vwrite .btn{width:100%;justify-content:center}
+  }
 </style>
 </head>
 <body>
@@ -949,6 +994,43 @@
     </div>
   </section>
 
+  <!-- ========== PARENTS' VOICES & LUPCE MESSAGES ========== -->
+  <section id="voices">
+    <div class="wrap">
+      <div class="voices-grid" id="voicesGrid" hidden>
+        <article class="vcard" id="vcFeedback" hidden>
+          <h2><span lang="bn">অভিভাবকদের কথা</span><span lang="en">What parents say</span></h2>
+          <div class="vbody" aria-live="polite">
+            <p class="vtext"></p>
+            <p class="vwho"></p>
+          </div>
+          <div class="vnav">
+            <button type="button" class="vprev" aria-label="Previous">&#9664;</button>
+            <span class="vdots"></span><span class="vcount"></span>
+            <button type="button" class="vnext" aria-label="Next">&#9654;</button>
+          </div>
+        </article>
+        <article class="vcard dark" id="vcMessage" hidden>
+          <h2><span lang="bn">LUPCE-এর বার্তা</span><span lang="en">Message from LUPCE</span></h2>
+          <div class="vbody" aria-live="polite">
+            <p class="vdate"></p>
+            <h3 class="vtitle"></h3>
+            <p class="vtext"></p>
+          </div>
+          <div class="vnav">
+            <button type="button" class="vprev" aria-label="Previous">&#9664;</button>
+            <span class="vdots"></span><span class="vcount"></span>
+            <button type="button" class="vnext" aria-label="Next">&#9654;</button>
+          </div>
+        </article>
+      </div>
+      <div class="vwrite">
+        <p><span lang="bn">আপনার সন্তানের শিক্ষা নিয়ে, অথবা LUPCE-কে আরও ভালো করতে আপনার মতামত আমাদের কাছে মূল্যবান।</span><span lang="en">Your thoughts on your child's learning, or on how LUPCE can do better, matter to us.</span></p>
+        <a class="btn" href="https://docs.google.com/forms/d/1XzLhaDHa7R5eB5eT0nVbTwsTJXMwCeulqmA_cgWsYlk/viewform" target="_blank" rel="noopener">&#9997; <span lang="bn">আপনার মতামত লিখুন</span><span lang="en">Share your opinion</span></a>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CONTACT ========== -->
   <section id="contact" class="glow">
     <div class="wrap">
@@ -1022,6 +1104,70 @@
     var k=(e.key||'').toLowerCase();
     if((e.ctrlKey||e.metaKey)&&(k==='c'||k==='x'||k==='a'||k==='u'||k==='s'||k==='p')&&!allowed(document.activeElement)) e.preventDefault();
   });
+})();
+</script>
+
+<script>
+(function(){
+  var CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vSXfr0aKpNnhCB3bgP4Oimd_KM0LOySBpUG6oTIvfrn2GzLuo0fwCaULP2YI8QOjok4e9Jg95ld-k97/pub?gid=174911&single=true&output=csv";
+  var BN="০১২৩৪৫৬৭৮৯";
+  function bn(n){return String(n).replace(/[0-9]/g,function(d){return BN[d];});}
+  function isBn(){return document.documentElement.classList.contains('lang-bn');}
+  function num(n){return isBn()?bn(n):String(n);}
+  function parseCSV(t){
+    var rows=[],row=[],f='',q=false;
+    for(var i=0;i<t.length;i++){
+      var c=t[i];
+      if(q){ if(c=='"'){ if(t[i+1]=='"'){f+='"';i++;} else q=false; } else f+=c; }
+      else if(c=='"') q=true;
+      else if(c==','){row.push(f);f='';}
+      else if(c=='\n'){row.push(f);rows.push(row);row=[];f='';}
+      else if(c!='\r') f+=c;
+    }
+    if(f!==''||row.length){row.push(f);rows.push(row);}
+    return rows;
+  }
+  function slider(card,items,render){
+    if(!items.length){card.hidden=true;return;}
+    card.hidden=false;
+    var i=0,dots=card.querySelector('.vdots'),count=card.querySelector('.vcount'),nav=card.querySelector('.vnav');
+    if(items.length<2) nav.classList.add('solo');
+    function show(){
+      render(items[i]);
+      dots.innerHTML='';
+      if(items.length<=12) for(var k=0;k<items.length;k++){var d=document.createElement('i');if(k===i)d.className='on';dots.appendChild(d);}
+      count.textContent=num(i+1)+'/'+num(items.length);
+    }
+    card.querySelector('.vprev').addEventListener('click',function(){i=(i-1+items.length)%items.length;show();});
+    card.querySelector('.vnext').addEventListener('click',function(){i=(i+1)%items.length;show();});
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){b.addEventListener('click',function(){setTimeout(show,0);});});
+    show();
+  }
+  if(!window.fetch) return;
+  fetch(CSV_URL,{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text();}).then(function(t){
+    var rows=parseCSV(t).slice(1),fb=[],msg=[];
+    rows.forEach(function(r){
+      var name=(r[1]||'').trim(),place=(r[2]||'').trim(),text=(r[3]||'').trim();
+      if(text) fb.push({name:name,place:place,text:text});
+      var date=(r[6]||'').trim(),title=(r[7]||'').trim(),m=(r[8]||'').trim();
+      if(m) msg.push({date:date,title:title,text:m});
+    });
+    msg.reverse();
+    var cf=document.getElementById('vcFeedback'),cm=document.getElementById('vcMessage');
+    slider(cf,fb,function(it){
+      cf.querySelector('.vtext').textContent='“'+it.text+'”';
+      cf.querySelector('.vwho').textContent='— '+it.name+(it.place?', '+it.place:'');
+    });
+    slider(cm,msg,function(it){
+      var d=cm.querySelector('.vdate'),h=cm.querySelector('.vtitle');
+      d.textContent=it.date; d.hidden=!it.date;
+      h.textContent=it.title; h.hidden=!it.title;
+      cm.querySelector('.vtext').textContent=it.text;
+    });
+    var grid=document.getElementById('voicesGrid');
+    var shown=(fb.length?1:0)+(msg.length?1:0);
+    if(shown){grid.hidden=false; if(shown===1) grid.classList.add('single');}
+  }).catch(function(){});
 })();
 </script>
 </body>
