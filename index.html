@@ -529,6 +529,50 @@
     .vwrite{padding:22px}
     .vwrite .btn{width:100%;justify-content:center}
   }
+  /* ===== colour polish ===== */
+  body{background-color:#D6E4DF}
+  .hero{background:
+      radial-gradient(900px 420px at 85% 10%,rgba(242,169,30,.16),transparent 60%),
+      radial-gradient(700px 500px at 0% 100%,rgba(94,143,43,.18),transparent 60%),
+      linear-gradient(135deg,#0A3A44 0%,#0D4F5C 45%,#16707F 100%)}
+  .btn.primary{background:linear-gradient(135deg,#F7BC3A,#F2A91E 55%,#E8940C);box-shadow:0 10px 24px -12px rgba(232,148,12,.9)}
+  .btn.primary:hover{background:linear-gradient(135deg,#FFCB55,#F7B02A)}
+  .kicker{background:linear-gradient(90deg,rgba(94,143,43,.14),rgba(242,169,30,.14));padding:3px 14px;border-radius:999px;letter-spacing:.2px}
+  #meaning .kicker,#contact .kicker{background:rgba(255,255,255,.1)}
+  h2{background:linear-gradient(100deg,#0A3A44 0%,#0D4F5C 45%,#1B8090 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  #meaning h2,#contact h2,.hero h2,.brain-close h2,.why h2,.sp h2,.panel h2{background:none;-webkit-text-fill-color:currentColor}
+  .sec-head h2::after,.brain h2::after,#reality h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin-top:14px;background:linear-gradient(90deg,var(--marigold),var(--paddy))}
+  #contact .sec-head h2::after{background:linear-gradient(90deg,var(--marigold),#7FC4BD)}
+  #brain,#how,#skills{background:linear-gradient(180deg,#FFFFFF 0%,#FAFCF9 100%)}
+  #journey,#reality,#educated{background:linear-gradient(180deg,#E6F0EB 0%,#EEF5F1 100%)}
+  #parents{background:linear-gradient(180deg,#FBF8F0 0%,#F6F2E6 100%)}
+  #meaning{background:radial-gradient(800px 400px at 90% 0%,rgba(242,169,30,.12),transparent 60%),linear-gradient(160deg,#0A3A44,#0C4651)}
+  #contact{background:radial-gradient(700px 360px at 10% 0%,rgba(242,169,30,.14),transparent 60%),linear-gradient(160deg,#0C4651,#0A3A44)!important}
+  footer{background:#072D35}
+  .edu li,.ct{transition:transform .2s ease,box-shadow .2s ease}
+  .edu li:hover{transform:translateY(-2px);box-shadow:0 18px 34px -22px rgba(13,79,92,.55)}
+  /* brain section */
+  .bstep{display:flex;align-items:center;gap:12px;margin:30px 0 12px;font-size:1.28rem;color:var(--river)}
+  .brain > div > .bstep:first-of-type{margin-top:22px}
+  .brain > div:last-child > .bstep:first-child{margin-top:4px}
+  .bnum{flex:none;display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#F7BC3A,#E8940C);color:#2A1E00;font-weight:800;font-size:1.1rem;box-shadow:0 6px 14px -8px rgba(232,148,12,.9)}
+  .brain p b{color:var(--river)}
+  .paddy-note.rule{background:linear-gradient(135deg,#FFF6E0,#FDEDC4);border-left-color:var(--marigold);margin:20px 0 6px}
+  .paddy-note.rule p{margin:0;color:#5A3D00;font-size:1.12rem}
+  .paddy-note.rule b{color:#0A3A44}
+  .chips li{background:linear-gradient(180deg,#FFFFFF,#E9F3EE);box-shadow:0 4px 10px -8px rgba(13,79,92,.6)}
+  .chips li:nth-child(3n+2){border-color:#F3D48D}
+  .chips li:nth-child(3n){border-color:#C4DBA8}
+  .brain-close{background:radial-gradient(500px 260px at 100% 0%,rgba(242,169,30,.18),transparent 60%),linear-gradient(150deg,#0D4F5C,#0A3A44);box-shadow:0 24px 40px -28px rgba(10,58,68,.9)}
+  .brain-close .call{color:var(--marigold);font-size:1.25rem;margin:0 0 14px;text-align:center}
+  .brain .brain-close p b{color:#FCD27A}
+  .ct a.web{display:block;margin-top:6px;color:#FCD27A}
+  @media (max-width:860px){
+    .bstep{font-size:1.4rem}
+    .bnum{width:42px;height:42px;font-size:1.2rem}
+    .paddy-note.rule p{font-size:1.28rem}
+    .brain-close .call{font-size:1.4rem}
+  }
 </style>
 </head>
 <body>
@@ -639,20 +683,26 @@
       <div>
         <span class="kicker"><span lang="bn">অভিভাবকের জন্য</span><span lang="en">For parents</span></span>
         <h2><span lang="bn">সন্তানের জীবনের ৬০ তলা ভবনের ভিত্তি গড়ার সময় এখনই</span><span lang="en">Now is the time to lay the foundation of your child's 60-storey life</span></h2>
-        <p class="lead2"><span lang="bn">জন্মের পর থেকেই শিশুর মস্তিষ্ক দ্রুত বিকশিত হতে থাকে। বিশেষ করে শৈশব ও কৈশোরে অভিজ্ঞতা, পরিবেশ, শেখা ও অনুশীলনের মধ্য দিয়ে মস্তিষ্কের সংযোগগুলো প্রতিনিয়ত বদলায় ও আরও পরিণত হয়। তাই ৪ থেকে ১৬ বছর বয়স শিশুর জ্ঞান, চিন্তাশক্তি, অভ্যাস ও দক্ষতা গড়ে ওঠার সবচেয়ে গুরুত্বপূর্ণ সময়।</span><span lang="en">A child's brain grows fast from birth. Through childhood and the teenage years, experience, surroundings, learning and practice keep changing and maturing its connections. That is why ages 4 to 16 are the most important years for building knowledge, thinking, habits and skills.</span></p>
-        <p><span lang="bn"><span class="term">Synaptic Pruning (সিন্যাপটিক প্রুনিং)</span> হলো মস্তিষ্কের একটি স্বাভাবিক বিকাশপ্রক্রিয়া। এতে মস্তিষ্ক কম ব্যবহৃত স্নায়ু-সংযোগগুলো ছেঁটে ফেলে, আর বেশি ব্যবহৃত সংযোগগুলোকে আরও শক্তিশালী ও কার্যকর করে তোলে। অর্থাৎ শিশু যা বেশি চর্চা করে, সেটাই তার মস্তিষ্কে স্থায়ী হয়ে যায়।</span><span lang="en"><span class="term">Synaptic pruning</span> is a natural part of brain development. The brain trims away connections that are rarely used and makes the often-used ones stronger and more efficient. In other words, what a child practises most is what stays in their brain.</span></p>
-        <div class="paddy-note building">
-          <p><span lang="bn">একজন মানুষের ৬০ বছরের জীবনকে একটি <b>৬০ তলা ভবনের</b> সঙ্গে তুলনা করুন। ভবন গড়তে যেমন ইট, বালু, সিমেন্ট আর রড লাগে, তেমনি একজন মানুষের চিন্তাভাবনা ও ব্যক্তিত্ব গড়ে ওঠে জ্ঞান, অভিজ্ঞতা, পরিবেশ, অনুশীলন ও বাস্তব শিক্ষা দিয়ে।</span><span lang="en">Think of a person's 60 years of life as a <b>60-storey building</b>. Just as a building needs bricks, sand, cement and steel, a person's thinking and character are built from knowledge, experience, surroundings, practice and real-life learning.</span></p>
-          <p><span lang="bn">আর উঁচু ভবনকে বহু বছর মজবুতভাবে দাঁড় করিয়ে রাখতে যেমন শুরুতেই শক্ত ভিত্তি দিতে হয়, তেমনি সন্তানের ভবিষ্যৎ জীবনের জন্য শৈশব ও কৈশোরেই গড়তে হয় জ্ঞান, দক্ষতা, অভ্যাস ও মূল্যবোধের ভিত্তি।</span><span lang="en">And just as a tall building needs a strong foundation from the start to stand firm for many years, a child's future life needs a foundation of knowledge, skills, habits and values built in childhood and the teenage years.</span></p>
+        <h3 class="bstep"><span class="bnum">১</span><span lang="bn">মস্তিষ্ক একটি বাগান</span><span lang="en">The brain is a garden</span></h3>
+        <p class="lead2"><span lang="bn">শিশুর মস্তিষ্ককে একটি বাগানের সঙ্গে তুলনা করা যায়। জন্মের পর প্রথম ২–৩ বছরে এই বাগানে খুব দ্রুত চারা গজায়। মস্তিষ্কে তৈরি হয় প্রায় <b>এক হাজার ট্রিলিয়ন</b> স্নায়ু-সংযোগ, যা একজন প্রাপ্তবয়স্ক মানুষের চেয়েও অনেক বেশি।</span><span lang="en">A child's brain is like a garden. In the first 2–3 years after birth, seedlings sprout very fast: the brain forms about <b>a thousand trillion</b> nerve connections, far more than an adult has.</span></p>
+        <p><span lang="bn">এরপর কাজ শুরু করে এক দক্ষ <b>"মালি"</b>, যার নাম <span class="term">Synaptic Pruning (সিন্যাপটিক প্রুনিং)</span>। মালি যেমন অপ্রয়োজনীয় ডালপালা ছেঁটে বাগানকে সুন্দর ও কার্যকর করে, তেমনি মস্তিষ্কও কম ব্যবহৃত সংযোগগুলো ছেঁটে ফেলে। আর বেশি ব্যবহৃত সংযোগগুলোকে আরও শক্ত ও দ্রুত করে তোলে। এভাবে ছাঁটতে ছাঁটতে <b>১৪–১৬ বছর বয়সে সংযোগের সংখ্যা প্রায় অর্ধেকে, অর্থাৎ পাঁচশো ট্রিলিয়নের কাছাকাছি নেমে আসে।</b></span><span lang="en">Then a skilled <b>"gardener"</b> gets to work: <span class="term">synaptic pruning</span>. Just as a gardener trims unneeded branches to keep a garden healthy and useful, the brain cuts away connections that are rarely used and makes the often-used ones stronger and faster. By ages <b>14–16, the number of connections falls to about half, close to five hundred trillion.</b></span></p>
+        <div class="paddy-note rule">
+          <p><span lang="bn">মস্তিষ্কের নিয়ম খুব সহজ: <b>যা ব্যবহার হয়, তা থাকে। যা ব্যবহার হয় না, তা হারিয়ে যায়।</b></span><span lang="en">The brain's rule is simple: <b>what is used, stays. What is not used, is lost.</b></span></p>
         </div>
+        <h3 class="bstep"><span class="bnum">২</span><span lang="bn">বাবা-মায়ের কথা ও আচরণই শিকড় গাড়ে</span><span lang="en">Parents' words and actions take root</span></h3>
+        <p><span lang="bn">তাই <b>৪ থেকে ১৪ বছর</b>, এই ১০টি বছরই সন্তানের জ্ঞান, চিন্তাশক্তি, অভ্যাস ও দক্ষতা গড়ে ওঠার সবচেয়ে গুরুত্বপূর্ণ সময়। এই বয়সে শিশু যা বারবার দেখে, শোনে আর করে, সেটাই তার মস্তিষ্কে স্থায়ী হয়ে যায়। বিশেষ করে বাবা-মায়ের কথা, আচরণ আর ধর্মীয় মূল্যবোধ তার মনে গভীর শিকড় গাড়ে। পরে নতুন কিছু শেখা অবশ্যই সম্ভব, তবে তখন তা অনেক বেশি কষ্টসাধ্য।</span><span lang="en">That is why <b>ages 4 to 14</b>, these 10 years, are the most important time for building a child's knowledge, thinking, habits and skills. What a child sees, hears and does again and again at this age becomes permanent in the brain. Above all, parents' words, behaviour and religious values take deep root. Learning new things later is certainly possible, but it is much harder.</span></p>
       </div>
       <div>
-        <p><span lang="bn">তাই এই বয়সে সন্তানের অফুরন্ত কৌতূহল আর কর্মচঞ্চলতাকে শুধু দুষ্টুমি, খেলাধুলা কিংবা পাঠ্যবইয়ের মধ্যে সীমাবদ্ধ রাখবেন না। খেলাধুলার পাশাপাশি তাকে জীবনঘনিষ্ঠ এই বিষয়গুলো শেখান:</span><span lang="en">So at this age, don't limit your child's endless curiosity and energy to mischief, play or textbooks alone. Alongside play, teach them these life skills:</span></p>
+        <h3 class="bstep"><span class="bnum">৩</span><span lang="bn">শক্তির ঝরনা কোন পথে বইবে?</span><span lang="en">Which way will the waterfall flow?</span></h3>
+        <p><span lang="bn">এই বয়সে শিশুর অফুরন্ত কৌতূহল আর কর্মচঞ্চলতা যেন পাহাড়ি ঝরনা। ঝরনার পানি যেদিকে বারবার বয়ে যায়, সেদিকেই পথ কেটে পাকা হয়ে যায়।</span><span lang="en">At this age, a child's endless curiosity and energy are like a mountain waterfall. Wherever the water flows again and again, it cuts a path that becomes permanent.</span></p>
+        <p><span lang="bn">খেলাধুলা বাদ দেওয়ার কথা বলছি না। দরকার <b>ভারসাম্য আর সঠিক দিক</b>। তাই সন্তানের এই শক্তিকে শুধু দুষ্টুমি, মোবাইল কিংবা পাঠ্যবইয়ের মধ্যে আটকে রাখবেন না। খেলাধুলার পাশাপাশি তাকে জীবনঘনিষ্ঠ এই বিষয়গুলো শেখান:</span><span lang="en">We are not saying stop play. What is needed is <b>balance and the right direction</b>. So don't keep your child's energy locked in mischief, mobile phones or textbooks alone. Alongside play, teach them these life skills:</span></p>
         <ul class="chips"><li><span lang="bn">বই পড়া</span><span lang="en">Reading</span></li><li><span lang="bn">পর্যবেক্ষণ</span><span lang="en">Observation</span></li><li><span lang="bn">প্রযুক্তি</span><span lang="en">Technology</span></li><li><span lang="bn">এআই</span><span lang="en">AI</span></li><li><span lang="bn">বিজ্ঞান</span><span lang="en">Science</span></li><li><span lang="bn">ধর্মীয় মূল্যবোধ</span><span lang="en">Religious values</span></li><li><span lang="bn">যোগাযোগ</span><span lang="en">Communication</span></li><li><span lang="bn">নেতৃত্ব</span><span lang="en">Leadership</span></li><li><span lang="bn">সমস্যা সমাধান</span><span lang="en">Problem solving</span></li><li><span lang="bn">বাস্তব কাজ</span><span lang="en">Real work</span></li><li><span lang="bn">অর্থ উপার্জন</span><span lang="en">Earning</span></li><li><span lang="bn">সঞ্চয়</span><span lang="en">Saving</span></li><li><span lang="bn">বিনিয়োগ</span><span lang="en">Investing</span></li><li><span lang="bn">অর্থ ব্যবস্থাপনা</span><span lang="en">Money management</span></li></ul>
-        <p style="margin-top:22px"><span lang="bn">মনে রাখবেন, এই বয়সে সন্তান যা শেখে, অনুশীলন করে আর যে অভিজ্ঞতা অর্জন করে, তা-ই তার ভবিষ্যৎ চিন্তা, দক্ষতা ও জীবন পরিচালনার সক্ষমতা গড়ে দেয়। তবে শেখার এই যাত্রা ১৬ বছরেই শেষ নয়, জীবনের প্রতিটি ধাপেই নিজেকে গড়ে তোলার সুযোগ থাকে।</span><span lang="en">Remember: what a child learns, practises and experiences at this age shapes how they will think, what they can do and how well they can run their life. But learning doesn't end at 16; every stage of life is a chance to keep growing.</span></p>
+        <p style="margin-top:22px"><span lang="bn">এই বয়সে সন্তান যা শেখে, অনুশীলন করে আর যে অভিজ্ঞতা অর্জন করে, তা-ই তার ভবিষ্যৎ চিন্তা, দক্ষতা ও জীবন পরিচালনার সক্ষমতা গড়ে দেয়। তবে শেখার যাত্রা ১৪ বছরেই শেষ নয়; জীবনের প্রতিটি ধাপেই নিজেকে গড়ে তোলার সুযোগ থাকে।</span><span lang="en">What a child learns, practises and experiences at this age shapes how they will think, what they can do and how well they can run their life. But learning doesn't end at 14; every stage of life is a chance to keep growing.</span></p>
         <div class="brain-close">
-          <p><span lang="bn">শৈশব ও কৈশোর শুধু বেড়ে ওঠার সময় নয়। এটি সেই সময়, যখন গড়ে ওঠে সন্তান ভবিষ্যতে কেমন মানুষ হবে, কী জানবে, কী করতে পারবে আর কীভাবে নিজের জীবন পরিচালনা করবে।</span><span lang="en">Childhood and the teenage years are not just for growing up. They are when the foundation is laid for who your child will become, what they will know, what they can do and how they will run their life.</span></p>
-          <p><span lang="bn">সন্তানের জীবনের ৬০ তলা ভবন গড়তে চাইলে আজ থেকেই তার ভিত্তি মজবুত করুন। তাকে শুধু পরীক্ষার জন্য নয়, বাস্তব জীবনের জন্য প্রস্তুত করুন। কারণ ভবিষ্যতের শক্ত ভিত তৈরি হয় আজকের শিক্ষা, অভিজ্ঞতা ও অনুশীলন দিয়ে।</span><span lang="en">If you want to build your child's 60-storey life, strengthen its foundation from today. Prepare them not only for exams, but for real life, because a strong future is built on today's learning, experience and practice.</span></p>
+          <h3 class="call"><span lang="bn">✦ অভিভাবকের প্রতি আন্তরিক আহ্বান ✦</span><span lang="en">✦ A heartfelt call to parents ✦</span></h3>
+          <p><span lang="bn">একজন মানুষের ৬০ বছরের জীবনকে একটি <b>৬০ তলা ভবন</b> ভাবুন। ভবন গড়তে যেমন ইট, বালু, সিমেন্ট আর রড লাগে, তেমনি মানুষ গড়ে ওঠে জ্ঞান, অভিজ্ঞতা, অনুশীলন আর মূল্যবোধ দিয়ে।</span><span lang="en">Think of a person's 60 years of life as a <b>60-storey building</b>. Just as a building needs bricks, sand, cement and steel, a person is built from knowledge, experience, practice and values.</span></p>
+          <p><span lang="bn">৬০ তলা ভবন আকাশ ছোঁয় তার <b>নিচের ১০ তলার</b> শক্তিতে। সন্তানের জীবনে <b>৪ থেকে ১৪ বছরের এই ১০টি বছরই সেই ভিত্তির ১০ তলা।</b> এই সময়টা একবার চলে গেলে আর ফিরে আসে না।</span><span lang="en">A 60-storey building touches the sky on the strength of its <b>bottom 10 floors</b>. In your child's life, <b>the 10 years from age 4 to 14 are those 10 foundation floors.</b> Once this time passes, it never comes back.</span></p>
+          <p><span lang="bn">তাই আজ থেকেই সন্তানের ভিত্তি মজবুত করুন। তাকে শুধু পরীক্ষার জন্য নয়, বাস্তব জীবনের জন্য প্রস্তুত করুন। ভিত্তি মজবুত হলে, <b>ইনশাআল্লাহ, তার জীবনের ভবন হয়ে উঠবে ধনে-মানে, সম্মানে-সমৃদ্ধিতে অফুরান।</b></span><span lang="en">So strengthen your child's foundation from today. Prepare them not only for exams, but for real life. With a strong foundation, <b>insha'Allah, the building of their life will rise rich in wealth, dignity, honour and prosperity.</b></span></p>
           <p><span lang="bn">আপনার সন্তানের উজ্জ্বল ভবিষ্যৎ গড়তে সহযোগী হিসেবে LUPCE আছে আপনার পাশে।</span><span lang="en">LUPCE stands beside you as a partner in building your child's bright future.</span></p>
         </div>
       </div>
@@ -1044,8 +1094,9 @@
           <a class="num wa-link" href="https://wa.me/8801638777950" target="_blank" rel="noopener"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1c-.2.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2l-.5-.3z"/></svg>01638-777950</a>
         </div>
         <div class="ct">
-          <span class="lbl"><span lang="bn">ইমেইল</span><span lang="en">Email</span></span>
+          <span class="lbl"><span lang="bn">ইমেইল ও ওয়েবসাইট</span><span lang="en">Email &amp; Website</span></span>
           <a href="mailto:lupcehq@gmail.com">lupcehq@gmail.com</a>
+          <a class="web" href="https://www.lupce.bd" target="_blank" rel="noopener">www.lupce.bd</a>
         </div>
         <div class="ct">
           <span class="lbl"><span lang="bn">ঠিকানা</span><span lang="en">Address</span></span>
